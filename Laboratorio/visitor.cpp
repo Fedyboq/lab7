@@ -266,7 +266,6 @@ void EVALVisitor::visit(VarDec* decl){
     } 
 }
 
-
 void EVALVisitor::visit(Programa *p) {
     p->cuerpo->accept(this);
 }
