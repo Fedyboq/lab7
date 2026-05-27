@@ -16,6 +16,12 @@ string Exp::binopToChar(BinaryOp op) {
         default:       return "?";
     }
 }
+string Exp::CbinopToChar(CBinaryOp op) {
+    switch (op) {
+        case LESSTHAN:  return "<";
+        case LESSEQUAL: return "<=";
+        case EQUALEQUAL:   return "==";
+}
 
 // ------------------ BinaryExp ------------------
 BinaryExp::BinaryExp(Exp* l, Exp* r, BinaryOp o)

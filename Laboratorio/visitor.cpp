@@ -11,6 +11,9 @@ using namespace std;
 int BinaryExp::accept(Visitor* visitor) {
     return visitor->visit(this);
 }
+int CBinaryExp::accept(Visitor *visitor) {
+    return visitor->visit(this);
+}
 
 int NumberExp::accept(Visitor* visitor) {
     return visitor->visit(this);
@@ -60,6 +63,20 @@ int PrintVisitor::visit(BinaryExp* exp) {
     exp->left->accept(this);
     cout << ' ' << Exp::binopToChar(exp->op) << ' ';
     exp->right->accept(this);
+    return 0;
+}
+bool PrintVisitor::visit(CBinaryExp* exp) {
+    if (exp->Not) {
+        exp->left->accept(this);
+        cout << ' ' << Exp::CbinopToChar(exp->op) << ' ';
+        exp->right->accept(this);
+    }
+    else{
+        cout << "not ";
+        exp->left->accept(this);
+        cout << ' ' << Exp::CbinopToChar(exp->op) << ' ';
+        exp->right->accept(this);
+    }
     return 0;
 }
 
@@ -117,6 +134,29 @@ int EVALVisitor::visit(BinaryExp* exp) {
             result = 0;
     }
     return result;
+}
+bool EVALVisitor::visit(CBinaryExp* exp) {
+    bool result;
+    int v1 = exp->left->accept(this);
+    int v2 = exp->right->accept(this);
+    switch (exp->op) {
+        case LESSTHAN:
+            result = v1 < v2;
+            break;
+        case LESSEQUAL:
+            result = v1 <= v2;
+            break;
+        case EQUALEQUAL:
+            result = v1 == v2;
+            break;
+        default:
+            cout << "Operador desconocido" << endl;
+            result = 0;
+    }
+    if (exp->Not) {
+        return result;
+    }
+    return not result;
 }
 
 int EVALVisitor::visit(NumberExp* exp) {

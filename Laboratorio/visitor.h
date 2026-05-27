@@ -40,6 +40,7 @@ public:
     void visit(VarDec* stm) override; 
     void visit(Body* b) ;   
     void imprimir(Programa* program);
+    bool visit(CBinaryExp *exp) override;
 };
 
 class EVALVisitor : public Visitor {
@@ -57,6 +58,7 @@ public:
     void visit(VarDec* stm) override;  
     void visit(Body* b) ;  
     void interprete(Programa* program);
+    bool visit(CBinaryExp *exp) override;
 };
 
 

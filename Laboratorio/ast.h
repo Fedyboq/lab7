@@ -30,6 +30,8 @@ public:
     virtual int  accept(Visitor* visitor) = 0;
     virtual ~Exp() = 0;  // Destructor puro → clase abstracta
     static string binopToChar(BinaryOp op);  // Conversión operador → string
+    static string CbinopToChar(CBinaryOp op);  // Conversión operador → string
+
 };
 
 // Expresión binaria
