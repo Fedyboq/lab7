@@ -1,3 +1,0 @@
-C:/Users/Federico/Downloads/Sem10_Code/cmake-build-debug/CMakeFiles/Sem10_Code.dir
-C:/Users/Federico/Downloads/Sem10_Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Federico/Downloads/Sem10_Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
