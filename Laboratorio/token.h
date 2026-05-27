@@ -33,7 +33,7 @@ public:
         NUM,     // Número
         ERR,     // Error
         ID,      // ID
-        END      // Fin de entrada
+        END      // Fin de entrada,
     };
 
     // Atributos
