@@ -22,6 +22,7 @@ public:
     virtual void visit(VarDec* stm) = 0; 
     virtual void visit(Body* stm) = 0; 
     virtual void visit(Programa* program) = 0;
+    virtual bool visit(CBinaryExp* exp) =0;
 };
 
 class PrintVisitor : public Visitor {

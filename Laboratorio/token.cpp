@@ -46,7 +46,15 @@ ostream& operator<<(ostream& outs, const Token& tok) {
         case Token::VAR:    outs << "TOKEN(VAR, \""    << tok.text << "\")"; break;
         case Token::COMA:    outs << "TOKEN(COMA, \""    << tok.text << "\")"; break;
         case Token::ENDWHILE:    outs << "TOKEN(ENDWHILE, \""    << tok.text << "\")"; break;
- 
+        case Token::BOOL:    outs << "TOKEN(BOOL, \""    << tok.text << "\")"; break;
+        case Token::BREAK:    outs << "TOKEN(BREAK, \""    << tok.text << "\")"; break;
+        case Token::AND:    outs << "TOKEN(AND, \""    << tok.text << "\")"; break;
+        case Token::OR:    outs << "TOKEN(OR, \""    << tok.text << "\")"; break;
+        case Token::PLUSPLUS:    outs << "TOKEN(PLUSPLUS, \""    << tok.text << "\")"; break;
+        case Token::LESSTHAN:    outs << "TOKEN(LESSTHAN, \""    << tok.text << "\")"; break;
+        case Token::LESSTHANEQUAL:    outs << "TOKEN(LESSTHANEQUAL, \""    << tok.text << "\")"; break;
+        case Token::EQUALEQUAL:    outs << "TOKEN(EQUALEQUAL, \""    << tok.text << "\")"; break;
+        case Token::NOT:    outs << "TOKEN(NOT, \""    << tok.text << "\")"; break;
         case Token::END:    outs << "TOKEN(END)"; break;
     }
     return outs;

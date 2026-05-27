@@ -27,8 +27,12 @@ BinaryExp::~BinaryExp() {
     delete right;
 }
 
-
-
+CBinaryExp::CBinaryExp(Exp* l, Exp* r, CBinaryOp o)
+    : left(l), right(r), op(o) {}
+CBinaryExp::~CBinaryExp() {
+    delete left;
+    delete right;
+}
 // ------------------ NumberExp ------------------
 NumberExp::NumberExp(int v) : value(v) {}
 

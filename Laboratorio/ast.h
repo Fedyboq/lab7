@@ -8,15 +8,20 @@
 
 using namespace std;
 
-class Visitor; 
+class Visitor;
 class Body;
 // Operadores binarios soportados
-enum BinaryOp { 
+enum BinaryOp {
     PLUS_OP, 
     MINUS_OP, 
     MUL_OP, 
     DIV_OP,
     POW_OP
+};
+enum CBinaryOp {
+    LESSTHAN,
+    LESSEQUAL,
+    EQUALEQUAL
 };
 
 // Clase abstracta Exp
@@ -28,6 +33,7 @@ public:
 };
 
 // Expresión binaria
+
 class BinaryExp : public Exp {
 public:
     Exp* left;
@@ -38,8 +44,21 @@ public:
     ~BinaryExp();
 
 };
+class CBinaryExp : public Exp {
+public:
+    Exp* left;
+    Exp* right;
+    CBinaryOp op;
+    bool Not = true;
+    int accept(Visitor* visitor);
+    CBinaryExp(Exp* l, Exp* r, CBinaryOp op);
+    ~CBinaryExp();
+
+};
 
 // Expresión numérica
+
+
 class NumberExp : public Exp {
 public:
     int value;
@@ -64,8 +83,7 @@ public:
     int accept(Visitor* visitor);
     SqrtExp(Exp* v);
     ~SqrtExp();
-}
-;
+};
 
 class Stmt{
 public:

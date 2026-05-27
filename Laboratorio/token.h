@@ -29,6 +29,15 @@ public:
         THEN,
         ENDIF,
         ASSIGN,
+        BOOL,
+        BREAK,
+        AND,
+        OR,
+        NOT,
+        PLUSPLUS,
+        LESSTHAN,
+        LESSTHANEQUAL,
+        EQUALEQUAL,
         SQRT,    // sqrt
         NUM,     // Número
         ERR,     // Error
