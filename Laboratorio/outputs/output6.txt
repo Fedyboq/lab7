@@ -2,11 +2,12 @@
 Parseo exitoso
 Codigo:
 fun void main():
-var int operando
-operando = 0
-if operando == 0 then
-print(1)
-endif
+var bool flag, condicion
+var int valor
+flag = 1
+valor = 5
+condicion = not valor == 0
+print(condicion)
 return 0
 endfun
 
